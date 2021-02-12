@@ -26,14 +26,11 @@ package main
 import (
 	"encoding/json"
 	"errors"
-	"fmt"
-	"io"
 	"log"
 	"os"
 	"os/exec"
 	"path/filepath"
 	"strings"
-	"text/tabwriter"
 )
 
 type repo string
@@ -108,19 +105,6 @@ func (r repo) findModules() (mods, error) {
 
 type mods []mod
 
-func (m mods) print(w io.Writer) error {
-	tw := tabwriter.NewWriter(w, 0, 0, 1, ' ', 0)
-	if _, err := fmt.Fprintln(tw, "FILE PATH\tIMPORT PATH"); err != nil {
-		return err
-	}
-	for _, m := range m {
-		if _, err := fmt.Fprintf(tw, "%s\t%s\n", m.filePath, m.importPath); err != nil {
-			return err
-		}
-	}
-	return tw.Flush()
-}
-
 func (m mods) crossLink() error {
 	for _, from := range m {
 		args := []string{"mod", "edit"}
@@ -158,10 +142,6 @@ func main() {
 	mods, err := repoRoot.findModules()
 	if err != nil {
 		log.Fatalf("unable to list modules: %v", err)
-	}
-
-	if err := mods.print(os.Stdout); err != nil {
-		log.Fatalf("unable to print modules: %v", err)
 	}
 
 	if err := mods.crossLink(); err != nil {
