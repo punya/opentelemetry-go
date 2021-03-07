@@ -13,7 +13,7 @@ require (
 	go.opentelemetry.io/otel/metric v0.17.0
 	go.opentelemetry.io/otel/sdk v0.17.0
 	go.opentelemetry.io/otel/sdk/export/metric v0.17.0
-	go.opentelemetry.io/otel/sdk/metric v0.17.0
+	go.opentelemetry.io/otel/sdk/metric v0.18.0
 	go.opentelemetry.io/otel/trace v0.17.0
 )
 
