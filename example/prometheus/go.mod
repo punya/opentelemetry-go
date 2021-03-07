@@ -11,7 +11,7 @@ replace (
 require (
 	go.opentelemetry.io/otel v0.17.0
 	go.opentelemetry.io/otel/exporters/metric/prometheus v0.17.0
-	go.opentelemetry.io/otel/metric v0.17.0
+	go.opentelemetry.io/otel/metric v0.18.0
 )
 
 replace go.opentelemetry.io/otel/bridge/opencensus => ../../bridge/opencensus
