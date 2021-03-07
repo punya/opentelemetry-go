@@ -9,7 +9,7 @@ replace (
 
 require (
 	github.com/stretchr/testify v1.7.0
-	go.opentelemetry.io/otel v0.17.0
+	go.opentelemetry.io/otel v0.18.0
 	go.opentelemetry.io/otel/metric v0.17.0
 	go.opentelemetry.io/otel/sdk v0.17.0
 	go.opentelemetry.io/otel/sdk/export/metric v0.17.0
