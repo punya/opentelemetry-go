@@ -48,6 +48,6 @@ replace go.opentelemetry.io/otel/trace => ../trace
 
 require (
 	go.opentelemetry.io/otel v0.17.0
-	go.opentelemetry.io/otel/metric v0.17.0
+	go.opentelemetry.io/otel/metric v0.18.0
 	go.opentelemetry.io/otel/trace v0.17.0
 )
